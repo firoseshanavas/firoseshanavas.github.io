@@ -4,7 +4,7 @@ const TARGET = new Date('2026-12-20T11:30:00+05:30').getTime()
 const CAL='https://calendar.google.com/calendar/render?action=TEMPLATE&text=Firose+%26+Mehrin+Wedding+Reception&dates=20261220T060000Z/20261220T090000Z&location=SEEMA+Auditorium%2C+Perumbavoor%2C+Kochi'
 const MAP = 'https://maps.app.goo.gl/YqkhBSAk72qoAVp3A?g_st=iw'
 const SONG = '/1000-years.mp3'          // put your mp3 in /public
-const RSVP_ENDPOINT = ''                // Google Apps Script / Formspree URL (saves RSVPs to a sheet)
+const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzB7gS4TgDX1HmvSh9uFBAT_KcweOaueckWj_Q7JXvzslKn_RaNOnEGEr18RcvBJWEt/exec'   // Google Sheet (Apps Script web app)
 const WHATSAPP = ''                     // e.g. '919XXXXXXXXX' → also sends RSVP to your WhatsApp
 
 // Photos live in /public/photos (faces centred, square crops). Outfit colours are spaced so similar ones never sit side by side.
@@ -169,11 +169,13 @@ export default function App(){
 
       <section>
         <Strands edge/><Reveal><p className="cap">The Reception</p><h2 className="script gold">Wedding Reception</h2>
-          <p className="cap">Sunday</p><div className="big">20</div><p className="cap">December 2026</p>
-          <span className="vl"/><p className="time2">11:30 AM</p><Divider/>
+          <div className="rcw"><div className="rcL"><p className="cap">Sunday</p><div className="big">20</div><p className="cap">December 2026</p>
+          <span className="vl"/><p className="time2">11:30 AM</p><Divider/></div><div className="rcR">
           <p className="cap">Venue</p><h3 className="vn">SEEMA Auditorium</h3><p className="addr">Perumbavoor, Kochi</p>
-          <a className="lnk" href={MAP} target="_blank" rel="noreferrer">View Location →</a>
-          <a className="btn" href={CAL} target="_blank" rel="noreferrer">Add to Calendar</a></Reveal>
+          <div className="acts">
+            <a className="act pri" href={MAP} target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.6"/></svg><span>View Location<small>Open in Google Maps</small></span></a>
+            <a className="act" href={CAL} target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v3M17 2v3M3 9h18M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM12 12.5v5M9.5 15h5"/></svg><span>Add to Calendar<small>Save the date to your phone</small></span></a>
+          </div></div></div></Reveal>
       </section>
 
       <section>
