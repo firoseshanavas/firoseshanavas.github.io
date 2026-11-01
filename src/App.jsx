@@ -528,6 +528,13 @@ const Crescent = () => (
     </g>
   </svg>
 );
+const PALETTE = [
+  ["Light Yellow", "#F1D668"],
+  ["Peach", "#F0B1A6"],
+  ["Mint Green", "#A8C6B1"],
+  ["Lilac", "#C5B4DA"],
+];
+
 export default function App() {
   const [caught, setCaught] = useState(false),
     [gone, setGone] = useState(false),
@@ -815,6 +822,24 @@ export default function App() {
               </p>
               <p className="cap">Ar-Rum · 30:21</p>
               <Divider />
+            </Reveal>
+          </section>
+
+          <section>
+            <Reveal>
+              <p className="cap">What to wear</p>
+              <h2 className="script gold">Dress Code</h2>
+
+              <div className="dcard">
+                <div className="dbar">
+                  {PALETTE.map(([n, c]) => (
+                    <div className="dcolor" key={n}>
+                      <i aria-hidden="true" style={{ background: c }} />
+                      <span>{n}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </Reveal>
           </section>
 

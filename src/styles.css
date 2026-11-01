@@ -33,13 +33,20 @@ main {
   z-index: 1;
 }
 section {
-  min-height: 80vh;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 4rem 1.5rem;
   gap: 1.2rem;
+}
+@media (max-width: 767px) {
+  section:not(.hero) {
+    min-height: auto;
+    padding: 3.25rem 1.25rem;
+    gap: 1rem;
+  }
 }
 .hero {
   min-height: 100svh;
@@ -252,6 +259,44 @@ footer {
   * {
     animation: none !important;
     transition-duration: 0.01s !important;
+  }
+}
+
+.dcard {
+  width: min(92vw, 900px);
+  padding: clamp(10px, 3vw, 16px);
+  border: 1.5px solid transparent;
+  border-radius: 24px;
+  background:
+    linear-gradient(#0b1931, #050914) padding-box,
+    var(--gg) border-box;
+  color: var(--tx);
+  text-align: left;
+}
+.dbar {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(10px, 2.5vw, 16px);
+}
+.dcolor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  font-size: clamp(0.75rem, 2.8vw, 0.9rem);
+  line-height: 1.2;
+  text-align: center;
+}
+.dcolor i {
+  display: block;
+  width: 100%;
+  height: clamp(64px, 18vw, 80px);
+  border-radius: 16px;
+}
+@media (min-width: 600px) {
+  .dbar {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
