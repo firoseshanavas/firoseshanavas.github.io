@@ -531,8 +531,8 @@ const Crescent = () => (
 const PALETTE = [
   ["Light Yellow", "#F1D668"],
   ["Peach", "#F0B1A6"],
-  ["Mint Green", "#A8C6B1"],
-  ["Lilac", "#C5B4DA"],
+  ["Mint Green / Olive Green", "#A8C6B1"],
+  ["Lilac / Lavender", "#C5B4DA"],
 ];
 
 export default function App() {
