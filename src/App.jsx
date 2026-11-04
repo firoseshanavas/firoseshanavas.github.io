@@ -529,10 +529,12 @@ const Crescent = () => (
   </svg>
 );
 const PALETTE = [
-  ["Light Yellow", "#F1D668"],
-  ["Peach", "#F0B1A6"],
-  ["Mint Green / Olive Green", "#A8C6B1"],
-  ["Lilac / Lavender", "#C5B4DA"],
+  ["Light Yellow", "#EDD67A"],
+  ["Peach", "#E8B4A8"],
+  ["Mint Green", "#AFD8C0"],
+  ["Olive Green", "#B1B77C"],
+  ["Lilac", "#CDA9D8"],
+  ["Lavender", "#B3B0E6"],
 ];
 
 export default function App() {
@@ -829,12 +831,11 @@ export default function App() {
             <Reveal>
               <p className="cap">What to wear</p>
               <h2 className="script gold">Dress Code</h2>
-
               <div className="dcard">
-                <div className="dbar">
+                <div className="pgrid">
                   {PALETTE.map(([n, c]) => (
-                    <div className="dcolor" key={n}>
-                      <i aria-hidden="true" style={{ background: c }} />
+                    <div key={n} className="ptile">
+                      <i style={{ backgroundColor: c }} />
                       <span>{n}</span>
                     </div>
                   ))}
